@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>graphQL</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/d3@7.8.5/dist/d3.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background">
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+    <div class="loginSection" id="loginSection">
+      <h3>Login Here</h3>
+
+      <label for="username">Username</label>
+      <input type="text" placeholder="Email or Username" id="username" />
+
+      <label for="password">Password</label>
+      <input type="password" placeholder="Password" id="password" />
+
+      <button id="loginButton">Log In</button>
+    </div>
+    <dvi id="mainView" style="display: none">
+      <div class="headerSection">
+        <h1>GraphQL</h1>
+        <button id="logoutButton">Logout</button>
+        <p>Welcome, AndriK</p>
+      </div>
+      <div class="mainSection">
+        <div id="userInfo" class="section">
+          <h1>User information</h1>
+          <table>
+            <tr>
+              <td><p>Username:</p></td>
+              <td><p id="userInfo1"></p></td>
+            </tr>
+            <tr>
+              <td><p>UserID:</p></td>
+              <td><p id="userInfo2"></p></td>
+            </tr>
+            <tr>
+              <td><p>Campus:</p></td>
+              <td><p id="userInfo3"></p></td>
+            </tr>
+            <tr>
+              <td><p>User XP:</p></td>
+              <td><p id="userInfo4"></p></td>
+            </tr>
+            <tr>
+              <td><p>Country:</p></td>
+              <td><p id="userInfo5"></p></td>
+            </tr>
+            <tr>
+              <td><p>Captain count:</p></td>
+              <td><p id="userInfo6"></p></td>
+            </tr>
+            <tr>
+              <td><p>Audits done:</p></td>
+              <td><p id="userInfo7"></p></td>
+            </tr>
+          </table>
+        </div>
+        <div id="tasksGraph" class="section sectionBarChart">
+          <h1>Completed projects with XP gained</h1>
+          <svg width="960" height="550"></svg>
+        </div>
+        <div class="section sectionPieChart">
+          <h1>Number of tasks done</h1>
+          <svg class="donut" width="300" height="100%" viewBox="0 0 42 42">
+            <circle id="donut-segment1" cx="21" cy="21" r="12" fill="transparent" stroke="#ce4b99" stroke-width="4"></circle>
+            <circle id="donut-segment2" cx="21" cy="21" r="12" fill="transparent" stroke="#b1c94e" stroke-width="4"></circle>
+            <circle id="donut-segment3" cx="21" cy="21" r="12" fill="transparent" stroke="#aaddff" stroke-width="4"></circle>
+            <g class="chart-text">
+              <text x="50%" y="50%" class="chart-number" id="totalValue">0</text>
+              <text x="50%" y="50%" class="chart-label">Total</text>
+            </g>
+          </svg>
+          <svg id="textSvg" width="200" height="200"></svg>
+        </div>
+        <div class="section sectionPieChart">
+          <h1>XP gained from events</h1>
+          <svg class="donut" width="300" height="100%" viewBox="0 0 42 42">
+            <circle id="donut-segment4" cx="21" cy="21" r="12" fill="transparent" stroke="#ce4b99" stroke-width="4"></circle>
+            <circle id="donut-segment5" cx="21" cy="21" r="12" fill="transparent" stroke="#b1c94e" stroke-width="4"></circle>
+            <circle id="donut-segment6" cx="21" cy="21" r="12" fill="transparent" stroke="#aaddff" stroke-width="4"></circle>
+            <g class="chart-text">
+              <text x="50%" y="50%" class="chart-number" id="totalValue2">0</text>
+              <text x="50%" y="50%" class="chart-label">Total (kB)</text>
+            </g>
+          </svg>
+          <svg id="textSvg2" width="220" height="200"></svg>
+        </div>
+      </div>
+    </dvi>
+    <script src="./js/main.js"></script>
+    <script src="./js/makeBarChart.js"></script>
+    <script src="./js/makePieChart.js"></script>
+  </body>
+</html>
